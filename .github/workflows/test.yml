@@ -3,7 +3,7 @@ name: Imai test
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   buiild:
     runs-on: ubuntu-latest
