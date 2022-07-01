@@ -1,0 +1,11 @@
+name: Imai test
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  buiild:
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v2
