@@ -14,4 +14,5 @@ jobs:
   test:
     need: build
     runs-on: ubuntu-latest
-    steps: python3 test.py
+    steps: 
+     -run: python3 test.py
