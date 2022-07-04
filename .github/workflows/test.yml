@@ -10,13 +10,10 @@ jobs:
     steps: 
       - name: checkout
         uses: actions/checkout@master
-        run: ls
-        run: pwd
+        run: pwd & ls
 
   test:
     needs: build
     runs-on: ubuntu-latest
     steps: 
-     - run: python3 test.py
-       run: ls
-       run: pwd
+     - run: pwd & ls
