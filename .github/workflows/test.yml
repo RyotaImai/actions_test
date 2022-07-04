@@ -10,10 +10,9 @@ jobs:
     steps: 
       - name: checkout
         uses: actions/checkout@master
-        run: pwd & ls
 
   test:
     needs: build
     runs-on: ubuntu-latest
     steps: 
-     - run: pwd & ls
+     - run: ls & run
