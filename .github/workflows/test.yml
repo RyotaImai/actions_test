@@ -8,5 +8,5 @@ jobs:
   buiild:
     runs-on: ubuntu-latest
     steps: 
-      uses: actions/checkout@master
-      run: python3 test.py
+      - uses: actions/checkout@master
+      - run: python3 test.py
