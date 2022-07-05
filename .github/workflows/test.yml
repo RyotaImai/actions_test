@@ -29,6 +29,6 @@ jobs:
         ECR_REPOSITORY: ${{ secrets.AWS_ECR_REPO_NAME }}
        run: |
         echo ${{ github.ref }}
-        IMAGE_TAG=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
+        IMAGE_TAG=test
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
