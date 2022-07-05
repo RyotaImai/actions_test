@@ -20,5 +20,5 @@ jobs:
         aws-region: us-west-2
 
      - name: Login to Amazon ECR
-       id: ryota-imai
+       id: github-actions-test-user
        uses: aws-actions/amazon-ecr-login@v1
