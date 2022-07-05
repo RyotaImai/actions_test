@@ -10,7 +10,7 @@ RUN pip3 install \
   sagemaker-training
 
 # Copies the training code inside the container
-COPY test.py /home/
+# COPY test.py /home/
 
 # Defines train.py as script entrypoint
 ENV SAGEMAKER_PROGRAM test.py
