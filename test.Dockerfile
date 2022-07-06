@@ -13,4 +13,4 @@ RUN pip3 install \
 # COPY test.py /home/
 
 # Defines train.py as script entrypoint
-ENV SAGEMAKER_PROGRAM test.py
+# ENV SAGEMAKER_PROGRAM test.py
