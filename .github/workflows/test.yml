@@ -22,6 +22,8 @@ jobs:
      - name: Login to Amazon ECR
        id: github-actions-test-user
        uses: aws-actions/amazon-ecr-login@v1
+
+     - name: Print
        run: echo ${{steps.github-actions-test-user.outputs.registry}}
 
      - name: Build and push
