@@ -6,6 +6,7 @@ on:
       AWS_REGION:
         required: true
         type: string
+    secrets:
       AWS_ACCESS_KEY_ID:
         required: true
         type: string
