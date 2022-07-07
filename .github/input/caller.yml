@@ -1,0 +1,10 @@
+on:
+  # push:
+
+jobs:
+  call-workflow-passing-data:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      username: mona
+    # secrets:
+    #   token: ${{ secrets.TOKEN }}
