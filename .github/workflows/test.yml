@@ -23,9 +23,6 @@ jobs:
        id: github-actions-test-user
        uses: aws-actions/amazon-ecr-login@v1
 
-     - name: Print
-       run: echo ${{steps.github-actions-test-user.outputs.registry}}
-
      - name: Build and push
        uses: docker/build-push-action@v3
        with:
@@ -41,6 +38,7 @@ jobs:
         ECR_REGISTRY: ${{steps.github-actions-test-user.outputs.registry}}
         ECR_REPOSITORY: ${{secrets.AWS_ECR_REPO_NAME}}
        run: |
+        echo ${{steps.github-actions-test-user.outputs.registry}}
         echo ${{ github.ref }}
         docker build -t test .
         docker tag test:latest 048565253484.dkr.ecr.us-west-2.amazonaws.com/test:latest
