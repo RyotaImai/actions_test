@@ -1,5 +1,5 @@
 on:
-  # push:
+  push:
 
 jobs:
   call-workflow-passing-data:
