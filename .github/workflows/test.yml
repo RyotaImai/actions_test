@@ -3,7 +3,7 @@ name: Imai test
 on:
   workflow_call:
     inputs:
-      username:
+      region:
         required: true
         type: string
 
