@@ -24,15 +24,15 @@ jobs:
        uses: aws-actions/amazon-ecr-login@v1
        run: echo ${{steps.github-actions-test-user.outputs.registry}}
 
-    - name: Build and push
-      uses: docker/build-push-action@v3
-      with:
-        context: .
-        file: Dockerfile
-        push: false
-        tags: user/app:latest
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
+     - name: Build and push
+       uses: docker/build-push-action@v3
+       with:
+       context: .
+       file: Dockerfile
+       push: false
+       tags: user/app:latest
+       cache-from: type=gha
+       cache-to: type=gha,mode=max
 
      - name: Build, tag, and push image to Amazon ECR
        env:
