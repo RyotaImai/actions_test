@@ -25,8 +25,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ inputs.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ inputs.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ inputs.AWS_REGION }}
       
       - name: Login to Amazon ECR
@@ -48,10 +48,10 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         env:
           ECR_REGISTRY: ${{steps.github-actions-test-user.outputs.registry}}
-          ECR_REPOSITORY: ${{inputs.AWS_ECR_REPO_NAME}}
+          ECR_REPOSITORY: ${{secrets.AWS_ECR_REPO_NAME}}
         run: |
           echo ${{steps.github-actions-test-user.outputs.registry}}
           echo ${{ github.ref }}
           docker build -t test .
-          docker tag test:latest ${{ inputs.AWS_USER_NAME}}.dkr.ecr.${{ inputs.region }}.amazonaws.com/test:latest
-          docker push ${{ inputs.AWS_USER_NAME}}.dkr.ecr.${{ inputs.region }}.amazonaws.com/test:latest
+          docker tag test:latest ${{ secrets.AWS_USER_NAME}}.dkr.ecr.${{ inputs.AWS_REGION }}.amazonaws.com/test:latest
+          docker push ${{ secrets.AWS_USER_NAME}}.dkr.ecr.${{ inputs.AWS_REGION }}.amazonaws.com/test:latest
