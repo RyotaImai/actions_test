@@ -7,8 +7,18 @@ on:
         required: true
         type: string
       secrets:
-        required: true
-
+        AWS_ACCESS_KEY_ID:
+          required: true
+          type: string
+        AWS_SECRET_ACCESS_KEY:
+          required: true
+          type: string
+        AWS_ECR_REPO_NAME:
+          required: true
+          type: string
+        AWS_USER_NAME:
+          required: true
+          type: string
 jobs:
   build:
     runs-on: ubuntu-latest
