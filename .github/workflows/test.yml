@@ -30,4 +30,3 @@ jobs:
        run: |
         echo ${{ github.ref }}
         docker build .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY
