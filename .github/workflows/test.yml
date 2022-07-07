@@ -45,3 +45,5 @@ jobs:
           docker build -t test .
           docker tag test:latest 048565253484.dkr.ecr.us-west-2.amazonaws.com/test:latest
           docker push 048565253484.dkr.ecr.us-west-2.amazonaws.com/test:latest
+
+          
