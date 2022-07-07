@@ -1,10 +1,11 @@
 on:
   push:
+    branches:
+      - master
+
 
 jobs:
   call-workflow-passing-data:
-    uses: ./.github/workflows/reusable.yml
+    uses: ./.github/workflows/test.yml
     with:
-      username: mona
-    # secrets:
-    #   token: ${{ secrets.TOKEN }}
+      region: us-west-2
